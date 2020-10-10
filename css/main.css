@@ -8,13 +8,13 @@ html {
     box-sizing: inherit; /* keep */
 }
 body {
-    font-family: sans-serif;
+    font-family: Roboto, Arial, sans-serif;
     background: #5598b2; /* keep */
     color: #333; /* keep */
     margin: 0; /* keep */
 }
 h1, h2 {
-    font-family: serif;
+    font-family: Martel, Georgia, serif;
 }
 #tagline {
     font-style: italic;
@@ -38,10 +38,17 @@ img {
     margin: auto; /* keep */
     display: grid; /* keep */
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, auto);
+    grid-template-rows: repeat(9, auto);
     grid-template-areas:
-        "header arial georgia pairing bobwhite-quail"
-        "readability line-length helvetica typeface footer";
+        "header header header header header"
+        "header header header header header"
+        "pairing pairing pairing arial georgia"
+        "bobwhite-quail bobwhite-quail readability readability readability"
+        "bobwhite-quail bobwhite-quail line-length line-length line-length"
+        "typeface typeface typeface helvetica helvetica"
+        "typeface typeface typeface helvetica helvetica"
+        "typeface typeface typeface helvetica helvetica"
+        "footer footer footer footer footer";
 }
 
 /* all grid items -
@@ -53,43 +60,83 @@ img {
 header {
     grid-area: header; /* keep */
     background: #fff; /* keep */
+    text-align: center;
+    font-size: 30px;
+
 }
 #arial {
     grid-area: arial; /* keep */
     background: #a8e8ff; /* keep */
+    padding-top: 3em;
+    padding-left: .5em;
+    padding-right: .5em;
+    padding-bottom: 1em;
+
 }
 #georgia {
     grid-area: georgia; /* keep */
     background: #a8e8ff; /* keep */
+    padding-top: 3em;
+    padding-left: .25em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+
 }
 #pairing {
     grid-area: pairing; /* keep */
     background: #a8e8ff; /* keep */
+    padding-top: 3em;
+    padding-left: 2em;
+    padding-right: 1.5em;
+    margin: 0;
+    font-size: 25px;
 }
 #bobwhite-quail {
     grid-area: bobwhite-quail; /* keep */
     background: #d2f4ff; /* keep */
+    padding-top: 5em;
+    padding-left: 4em;
+    padding-right: 2em;
+
 }
 #readability {
     grid-area: readability; /* keep */
     background: #d2f4ff; /* keep */
+    padding-right: 2em;
+    padding-top: 2em;
+    padding-bottom: 0.5em;
+    font-size: 21px;
 }
 #line-length {
     grid-area: line-length; /* keep */
     background: #d2f4ff; /* keep */
+    margin: 0;
+    padding-right:2em;
+    padding-bottom: 5.25em;
+    font-size: 21px;
 }
 #helvetica {
     grid-area: helvetica; /* keep */
     background: #fff; /* keep */
+    margin-bottom: 17em;
+    margin-top: 3em;
+    margin-right: 2em;
+    padding: 3em;
+
 }
 #typeface {
     grid-area: typeface; /* keep */
     color: #d2f4ff; /* keep */
     background: #5598b2; /* keep */
+    padding: 2em;
+    padding-top: 1em;
+    font-size: 20px;
+    text-shadow: 1px 1px 0 #001458
 }
 footer {
     grid-area: footer; /* keep */
     background: #b2988a; /* keep */
+    text-align: center;
 }
 
 /* end of all 10 grid items */
@@ -105,3 +152,57 @@ a:hover {
 }
 
 /* media queries below - only 1 is needed */
+
+@media (max-width: 980px) {
+  #container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(10, auto);
+    grid-template-areas:
+      "header header"
+      "header header"
+      "arial georgia"
+      "pairing pairing"
+      "bobwhite-quail bobwhite-quail"
+      "readability readability"
+      "line-length line-length"
+      "helvetica helvetica"
+      "typeface typeface"
+      "footer footer";
+      justify-content: center;
+    }
+
+    header{
+      grid-area: header;
+      padding: 1em;
+      text-align: center;
+      font-size: 22px;
+  }
+
+    #arial {
+      padding-top: 1em;
+      padding-left: 1em;
+    }
+    #georgia {
+      padding-top: 1em;
+      padding-right: 1.25em;
+    }
+    #pairing {
+      padding: 1em;
+    }
+    #bobwhite-quail {
+      padding: 1em;
+    }
+    #readability {
+      padding: 1em;
+    }
+    #line-length {
+      padding: 1em;
+    }
+    #helvetica {
+      margin: 0;
+    }
+    #typeface {
+      padding: 1em;
+    }
+
+}
